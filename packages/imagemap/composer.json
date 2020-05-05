@@ -1,0 +1,20 @@
+{
+    "name": "baodv/imagemap",
+    "description": "Image Map Bulder",
+    "type": "libbrary",
+    "keywords": ["laravel", "Image Map Bulder"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bao Do",
+            "email": "baodv.dev@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "BaoDo\\ImageMap\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
