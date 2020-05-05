@@ -1,7 +1,7 @@
 @extends('imagemap::layouts.master')
 @section('imagemap::content')
 	<div class="image-map-main-wrapper">
-		<form action="{{ route('image.map.store') }}" method="POST">
+		<form action="{{ route('image.map.store') }}" method="POST" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<input type="hidden" name="url_add_point" value="{{ route('image.map.add.point') }}">
 			<table class="svl-table">
@@ -103,7 +103,7 @@
 			</table>
 			<div class="svl-image-wrap has-image">	
 			<div class="svl-control">
-				<input type="button" id="meta-image-button" class="button" value="Upload Image" />
+				<input type="file" id="meta-image-button" class="button" name="maps_images_upload"/>
 				<input type="hidden" name="maps_images" class="maps_images" id="maps_images" value="" />
 				<input type="button" name="add_point" class="add_point button view-has-value" value="Add Point"/>
 				<span class="spinner"></span>

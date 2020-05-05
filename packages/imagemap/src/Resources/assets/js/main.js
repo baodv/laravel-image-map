@@ -1,79 +1,29 @@
 jQuery(document).ready(function($) {
     // Instantiates the variable that holds the media library frame.
+	function filePreview(input) {
+		console.log(input.files);
+		console.log(input.files[0]);
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        reader.onload = function (e) {
+		console.log(e.target.result);
+		console.log('vao day');
+	            $('#body_drag .images_wrap img').attr('src', e.target.result);
+	            $('#body_drag .images_wrap').html('<img src="' + e.target.result + '">');
+	        };
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	} 
     var meta_image_frame;
-
     // Runs when the image button is clicked.
     $('body').on('click', '[id*=meta-image-button]', function(e) {
-
-        e.preventDefault();
-
-        // Sets up the media library frame
-        meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
-            title: meta_image.title,
-            button: {
-                text: meta_image.button
-            },
-            library: {
-                type: 'image'
-            },
-            multiple: false
-        });
-
-        // Runs when an image is selected.
-        meta_image_frame.on('select', function() {
-            // Grabs the attachment selection and creates a JSON representation of the model.
-            var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
-            // Sends the attachment URL to our custom image input field.
-            $('.svl-image-wrap').addClass('has-image');
-            $('#maps_images').val(media_attachment.url);
-            if ($('#body_drag .images_wrap img').length > 0) {
-                $('#body_drag .images_wrap img').attr('src', media_attachment.url);
-            } else {
-                $('#body_drag .images_wrap').html('<img src="' + media_attachment.url + '">');
-            }
-        });
-        // Opens the media library frame.
-        meta_image_frame.open();
+        // e.preventDefault();
+        filePreview(this);
     });
     $('body').on('click', '.button-upload', function(e) {
         // Prevents the default action from occuring.
-        e.preventDefault();
-        var thisUpload = $(this).parents('.svl-upload-image');
-        // Sets up the media library frame
-        meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
-            title: meta_image.title,
-            button: {
-                text: meta_image.button
-            },
-            library: {
-                type: 'image'
-            },
-            multiple: false
-        });
-        // Runs when an image is selected.
-        meta_image_frame.on('select', function() {
-            // Grabs the attachment selection and creates a JSON representation of the model.
-            var media_attachment = meta_image_frame.state().get('selection').first().toJSON();
-            // Sends the attachment URL to our custom image input field.
-            thisUpload.addClass('has-image');
-            thisUpload.find('input[type="hidden"]').val(media_attachment.url);
-            thisUpload.find('img.image_view').attr('src', media_attachment.url);
-            calc_custom_position();
-        });
-        // Opens the media library frame.
-        meta_image_frame.open();
     });
-    /*var coordinates = function(event, ui, element) {
-  		element = $(element);
-  		var left = ui.position.left,
-			top  = ui.position.top;
-		var wWrap = element.width(),
-			hWrap = element.height();
-		$('#results').text('X: ' + left + ' ' + 'Y: ' + top)
-					 .append('<br>W: '+ wWrap +' H: '+ hWrap)
-					 .append('<br>top: '+ (top/hWrap)*100 +'%;left: '+ (left/wWrap)*100+'%;');
-	}
-	*/
+
     function doDraggable() {
         $('.drag_element').draggable({
             containment: '#body_drag',
@@ -251,14 +201,6 @@ jQuery(document).ready(function($) {
             point_position(thisVal);
         return false;
     });
-    /*$('body').on('click','.pins_click_to_edit',function(){
-        var target = $(this).data('target')
-        //$(target).modal();
-        $(target).bPopup({
-            content:'iframe'
-        });
-        return false;
-    });*/
     $('body').on('click', '[data-popup-open]', function(e) {
         var targeted_popup_class = jQuery(this).attr('data-popup-open');
         $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);

@@ -255,6 +255,8 @@ table.svl-table tr:last-child td {
 input#meta-image-button {
     float: left;
     margin: 0 10px 0 0;
+    display: inline-block;
+    width: 115px;
 }
 
 .svl-control {
@@ -385,4 +387,38 @@ body.rtl .devvn-hotspot-popup-inner {
     padding: 12px 0px;
     text-align: center;
     color: #fff;
+}
+#meta-image-button {
+  color: transparent;
+}
+#meta-image-button::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#meta-image-button::before {
+  content: 'Upload Image';
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+#meta-image-button:hover::before {
+  border-color: black;
+}
+#meta-image-button:active {
+  outline: 0;
+}
+#meta-image-button:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+input[type="file"] {
+    outline: none;
 }
