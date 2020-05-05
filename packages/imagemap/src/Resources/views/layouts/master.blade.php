@@ -22,6 +22,7 @@
 </div>
 @include('imagemap::layouts.footer')
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
 <script src="{{ asset('packages/imagemap/js/main.js ')}}"></script>
 @yield('addJs')
 </body>

@@ -1,7 +1,7 @@
 @extends('imagemap::layouts.master')
 @section('imagemap::content')
 	<div class="image-map-main-wrapper">
-		<form action="" method="POST">
+		<form action="{{ route('image.map.store') }}" method="POST">
 			{{ csrf_field() }}
 			<input type="hidden" name="url_add_point" value="{{ route('image.map.add.point') }}">
 			<table class="svl-table">
@@ -11,8 +11,8 @@
 						<td class="svl-input">
 							<div class="svl-upload-image has-image">						
 								<div class="view-has-value">
-									<input type="hidden" name="pins_image" class="pins_image" value="http://demo-wordpress.local/wp-content/uploads/2020/05/vietnam.png" />	
-									<img src="http://demo-wordpress.local/wp-content/uploads/2020/05/vietnam.png" class="image_view pins_img"/>									
+									<input type="hidden" name="pins_image" class="pins_image" value="https://vndc.io/assets/images/EN.png" />	
+									<img src="https://vndc.io/assets/images/EN.png" class="image_view pins_img"/>									
 									<a href="#" class="svl-delete-image">x</a>
 								</div>
 								<div class="hidden-has-value">
@@ -26,8 +26,8 @@
 						<td class="svl-input">
 							<div class="svl-upload-image has-image">						
 								<div class="view-has-value">
-									<input type="hidden" name="pins_image_hover" class="pins_image_hover" value="" />
-									<img src="" class="image_view pins_img_hover"/>									
+									<input type="hidden" name="pins_image_hover" class="pins_image_hover" value="https://vndc.io/assets/images/VN.png" />
+									<img src="https://vndc.io/assets/images/VN.png" class="image_view pins_img_hover"/>									
 									<a href="#" class="svl-delete-image">x</a>
 								</div>
 								<div class="hidden-has-value">
@@ -110,12 +110,12 @@
 			</div>	
 			<div class="wrap_svl view-has-value" id="body_drag">
 				<div class="images_wrap">
-					<img src="http://demo-wordpress.local/wp-content/uploads/2020/05/ảnh-bìa-lành.jpg">
+					<img src="{{ asset('packages/imagemap/images/maps_images_default.jpg') }}">
 				</div>	
-				đoạn này hienr thi lại các điểm đã vẽ
 			</div>	
-			<div class="all_points">	
-				Hiển thị modal
+			<div class="all_points"></div>
+			<div class="btn-add">
+				<input type="submit" value="Đăng tin">
 			</div>
 		</div>
 	</div>

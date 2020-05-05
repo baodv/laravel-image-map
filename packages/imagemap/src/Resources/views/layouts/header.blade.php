@@ -3,7 +3,7 @@
         <div class="row">
            <div class="logo col-md-3 col-sm-3">
                <a href="">
-                   <img src="https://sapa.co.jp/img/logo_sapa-white.svg"/>
+                   <img src="https://sapa.co.jp/img/logo_sapa-white.svg" style="max-width: 150px;" />
                </a>
            </div>
             <div class="navbar-header">
