@@ -1,15 +1,16 @@
 /**** Reset Style ****/
 * {
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 body {
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 .image-map-main-wrapper {
-	width: 1200px;
-	margin: 0 auto;
+    width: 1200px;
+    margin: 0 auto;
 }
 .devvn_row,
 .devvn_col_3 {
@@ -213,7 +214,9 @@ input.shortcodemap {
     position: relative;
     float: left;
 }
-
+#body_drag {
+    width: 100%;
+}
 a.svl-delete-image {
     position: absolute;
     top: 0;
@@ -357,7 +360,6 @@ body div#body_drag .point_style img {
 .devvn-hotspot-popup-inner {
     max-width: 700px;
     width: 90%;
-    padding: 10px;
     position: relative;
     top: 10px;
     left: 50%;
@@ -374,13 +376,21 @@ body div#body_drag .point_style img {
 body.rtl .devvn-hotspot-popup-inner {
     left: 0;
 }
+.devvn-hotspot-popup-modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
 .devvn-hotspot-popup-modal-header h3 {
     display: block;
-    margin: -5px 0 10px 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .devvn-hotspot-popup-modal-footer {
+    padding: 15px;
     text-align: right;
+    border-top: 1px solid #e5e5e5;
 }
 .copyright-footer {
     background: #131211;
@@ -421,4 +431,107 @@ body.rtl .devvn-hotspot-popup-inner {
 }
 input[type="file"] {
     outline: none;
+}
+.image-map-content {
+    width: 75%;
+    float: left;
+}
+.image-map-main-sidebar {
+    width: 25%;
+    float: left;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+.clearfix:after {
+    clear: both;
+}
+input.add_point {
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.form-control {
+    display: block;
+    max-width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    box-sizing: border-box;
+}
+textarea.form-control {
+    width: 100%;
+    max-width: 100%;
+    min-height: 90px;
+}
+.form-control:not(select) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.devvn-hotspot-popup-modal-body {
+    padding: 15px 20px;
+}
+.devvn-hotspot-popup-modal-body label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+.devvn-hotspot-popup-modal-footer .button {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.devvn-hotspot-popup-modal-footer .button-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.devvn-hotspot-popup-modal-footer .button-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.devvn-hotspot-popup-modal-footer .button:hover {
+    -webkit-box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);   
 }

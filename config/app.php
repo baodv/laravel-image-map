@@ -174,8 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        BaoDo\ImageMap\ImageMapServiceProvider::class
-
+        BaoDo\ImageMap\Providers\ImageMapServiceProvider::class
     ],
 
     /*

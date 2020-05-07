@@ -1,17 +1,17 @@
 <?php
-namespace BaoDo\ImageMap;
+namespace BaoDo\ImageMap\Providers;
 use Illuminate\Support\ServiceProvider;
 
 Class ImageMapServiceProvider extends ServiceProvider
 {
     public function boot() {
-        $this->loadRoutesFrom(__DIR__.'/Routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/Resources/views', 'imagemap');
+        $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'imagemap');
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
-        $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'imagemap');
+        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'imagemap');
     
         $this->publishes([
-	        __DIR__.'/Resources/assets' => public_path('packages/imagemap'),
+	        __DIR__.'/resources/assets' => public_path('packages/imagemap'),
 	    ], 'public');
     }
 

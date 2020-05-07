@@ -15,7 +15,10 @@ class CreateImageMapsTable extends Migration
     {
         Schema::create('image_maps', function (Blueprint $table) {
             $table->id();
-            $table->
+            $table->string('name_map')->nullable();
+            $table->string('image_map')->nullable();
+            $table->text('data_areas')->nullable();
+            $table->boolean('delete_flag')->default(0);
             $table->timestamps();
         });
     }

@@ -1,13 +1,9 @@
 jQuery(document).ready(function($) {
     // Instantiates the variable that holds the media library frame.
 	function filePreview(input) {
-		console.log(input.files);
-		console.log(input.files[0]);
 	    if (input.files && input.files[0]) {
 	        var reader = new FileReader();
 	        reader.onload = function (e) {
-		console.log(e.target.result);
-		console.log('vao day');
 	            $('#body_drag .images_wrap img').attr('src', e.target.result);
 	            $('#body_drag .images_wrap').html('<img src="' + e.target.result + '">');
 	        };
@@ -31,7 +27,8 @@ jQuery(document).ready(function($) {
                 /*coordinates(event, ui, '#body_drag');*/
             },
             stop: function(event, ui) {
-                var thisPoint = ui.helper.context.id;
+                var thisPoint = ui.helper[0].id;
+                // var thisPoint = ui.helper.context.id;
                 var dataPoint = $('#' + thisPoint).attr('data-points');
                 var element = $('#body_drag');
                 var left = ui.position.left,
@@ -40,7 +37,6 @@ jQuery(document).ready(function($) {
                     hWrap = element.height();
                 var topPosition = ((top / hWrap) * 100).toFixed(2),
                     leftPosition = ((left / wWrap) * 100).toFixed(2);
-
                 $('.all_points #info_draggable' + dataPoint + ' input[name="pointdata[top][]"]').val(topPosition);
                 $('.all_points #info_draggable' + dataPoint + ' input[name="pointdata[left][]"]').val(leftPosition);
 
