@@ -125,3 +125,13 @@ address {
     height: 100%;
     width: 100%;
 }
+.site-header {
+    background: #131211;
+    padding: 12px 0px;
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+}
+.site-content {
+    min-height: 850px;
+}

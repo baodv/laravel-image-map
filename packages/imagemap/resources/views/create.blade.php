@@ -4,7 +4,7 @@
 		<form action="{{ route('image.map.store') }}" method="POST" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<input type="hidden" name="url_add_point" value="{{ route('image.map.add.point') }}">
-			<input type="hidden" id="image_map" name="image_map" value="">
+			<input type="hidden" id="image_map" name="image_map" value="https://www.jqueryscript.net/demo/Highlight-Image-Areas-Hover-Mapoid/map.jpg">
 			<div class="container">
 			    <div class="row">
 			        <div class="col-md-12">

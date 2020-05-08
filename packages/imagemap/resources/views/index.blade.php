@@ -16,6 +16,7 @@
 						<th>ID</th>
 						<th>Name Image Map</th>
 						<th>Image Map</th>
+						<th>ShortCode</th>
 						<th>Created At</th>
 						<th>Action</th>
 					</tr>
@@ -30,7 +31,10 @@
 								{{ $data->name_map }}
 							</td>
 							<td>
-								<img style="max-width: 60px" src="{{ $data->map_image }}">
+								<img style="max-width: 60px" src="{{ $data->image_map }}">
+							</td>
+							<td>
+								[ImageMap id="{{ $data->id }}"]
 							</td>
 							<td>
 								{{ $data->created_at }}
