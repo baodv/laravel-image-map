@@ -103,7 +103,6 @@
                     d.addArea(b, "rect"), 
                     d.refresh.apply(this, [b]), 
                     "function" == typeof c[b].options.event.update && c[b].options.event.update.apply(f)
-                    console.log('tao link anh');
                 }
             },
             bindEvents: function(b) {
@@ -367,7 +366,7 @@ function(a) {
                 src: a("#image-mapper-url", b).val(),
                 file: ""
             }), a("#image-mapper-load").modal("hide")
-            $('#image_map').attr('src',a("#image-mapper-url", b).val());
+            $('#image_map').attr('src',$('#image-mapper-img').val());
         }), a(document).on("change", "#image-mapper-file", function() {
             var c = this.files[0],
                 d = new FileReader;

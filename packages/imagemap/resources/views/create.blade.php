@@ -1,6 +1,6 @@
 @extends('imagemap::layouts.master')
 @section('imagemap::content')
-	<div class="image-map-generator">
+	<div class="image-map-generator clearfix">
 		<form action="{{ route('image.map.store') }}" method="POST" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<input type="hidden" name="url_add_point" value="{{ route('image.map.add.point') }}">
@@ -8,8 +8,8 @@
 			<div class="container">
 			    <div class="row">
 			        <div class="col-md-12">
-			            <h2>How Does it Work?</h2>
-			            <p itemprop="description">With the help of our generator creating html imagemaps is free and easy. Simply start by selecting an image from your pc, or load one directly from an external website. Next up create your hot areas using either rectangle, circle or polygon shapes. Creating these shapes is as easy as pointing and clicking on your image. Don't forget to enter a link, title and target for each of them. Then once you're finished simply click Show Me The Code!</p>
+			            <h2>Image SVG Map Builder</h2>
+			            <p itemprop="description">Image SVG Map Builder™ comes with its own feature rich web app, so you can quickly and easily create the most comprehensive selection of interactive SVG image maps, pins and custom vector shapes, and immediately export them to your website.</p>
 		                <div class="name-map">
 		                	<label>Name Map</label>
 		                	<input name="name_map" value="{{ old('name_map') }}" type="text" class="form-control" placeholder="Nhập tên tạo">
@@ -55,7 +55,6 @@
 		                            </td>
 		                            <td>
 		                            	<select name="im[0][shape]" class="form-control input-sm">
-		                                    <option value="">---</option>
 		                                    <option value="rect">Rect</option>
 		                                    <option value="poly">Poly</option>
 		                                    <option value="circle">Circle</option>
@@ -96,11 +95,10 @@
 		            </div>
 		        </div>
 		    </div>
-		    <input id="image-mapper-button" type="submit" name="hay lam" value="xin chao">
-		    <div class="container toggle-content segment" style="display: none;">
-		        <div class="row">
-		            <div class="col-md-12" style="text-align: center"><button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modal-code">Show Me The Code!</button></div>
-		        </div>
+		    <div class="col-md-12 text-center">
+		    	<button id="image-mapper-button" type="submit" class="btn btn-info">
+		    		<span class="glyphicon glyphicon-floppy-saved"></span> Submit Button
+	    		</button>
 		    </div>
 		</form>
 	</div>
@@ -123,22 +121,6 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal-code" tabindex="-1" role="dialog" aria-labelledby="modal-code-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" id="modal-code-dialog">
-                <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="modal-code-label">Generated Image Map Output</h4>
-                </div>
-                <div class="modal-body">
-                	<textarea class="form-control input-sm" readonly="readonly" id="modal-code-result" rows="10"></textarea>
-                </div>
-                <div class="modal-footer">
-                	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <input type="hidden" name="aaa" id="123" value="">
 @stop
 @section('addJs')
 	<script src="{{ asset('packages/imagemap/js/main.js ')}}"></script>
